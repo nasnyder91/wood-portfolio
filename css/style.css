@@ -1,0 +1,40 @@
+body,html{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x:hidden;
+  overflow: initial;
+  position: relative;
+  font-size: 62.5%;
+}
+
+#pageTop{
+  padding-bottom: 5%;
+}
+
+#gallery{
+  height: 75%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+#filterBar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.filterBtns{
+  height: 20%;
+}
+
+.filterBtns:hover{
+  cursor: pointer;
+}
+
+#filterHL{
+  position: absolute;
+  background-color: black;
+  opacity: .25;
+}
