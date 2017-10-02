@@ -6,26 +6,38 @@ $(document).ready(function(){
   $("#filterHL").height($(".filterBtns").height()).width($(".filterBtns").width());
   $("#filterHL").offset({ top: initialPos.top, left: initialPos.left });
 
-  //Set highlight animation on filter button click
+  //Set highlight animation on filter button click/populate gallery with filtered results
   $(".filterBtns").click(function(){
-    var newPos = $(this).offset();
+    var sender = $(this);
+    var newPos = sender.offset();
     $("#filterHL").animate({top: newPos.top}, "slow");
+    $("#photoIcons").fadeOut("fast", function(){
+      $("#photoIcons").empty();
+      if($(sender).attr("id") == "all"){
+        getAllImgs();
+      } else{
+        populateImgs($(sender).attr("url"));
+      }
+      $("#photoIcons").fadeIn("fast");
+    });
   });
 
   //Populate all gallery images\
-  $.ajax({
-    url: "../img/",
-    success: function(data){
-      var parser = new DOMParser(),
-          doc = parser.parseFromString(data, 'text/html');
+  function getAllImgs(){
+    $.ajax({
+      url: "../img/",
+      success: function(data){
+        var parser = new DOMParser(),
+            doc = parser.parseFromString(data, 'text/html');
 
-      var rows = doc.querySelector('table').querySelectorAll('tr');
+        var rows = doc.querySelector('table').querySelectorAll('tr');
 
-      for (var i=1;i<rows.length;i++) {
-        populateImgs(rows[i].children[3].children[0].text);
+        for (var i=1;i<rows.length;i++) {
+          populateImgs(rows[i].children[3].children[0].text);
+        }
       }
-    }
-  });
+    });
+  };
 
   function populateImgs(url){
     $.ajax({
@@ -45,6 +57,11 @@ $(document).ready(function(){
         }
       }
     })
-  }
+  };
 
+  getAllImgs();
+
+  window.onresize = function(){
+
+   };
 });

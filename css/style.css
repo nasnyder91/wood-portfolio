@@ -13,6 +13,10 @@ body,html{
   padding-bottom: 5%;
 }
 
+.container{
+  max-width: 1300px;
+}
+
 #gallery{
   height: 75%;
   display: grid;
@@ -42,22 +46,24 @@ body,html{
   opacity: .25;
 }
 
-.row{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-}
-
 #photoIcons{
+  padding: 10px;
   overflow: auto;
   overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-rows: repeat(auto-fill,200px);
+  grid-gap: 10px;
 }
 
 .card{
   width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.card:before{
+.card::before{
   content: "";
   display: block;
   padding-top: 100%;
