@@ -25,6 +25,14 @@ $(document).ready(function(){
     });
   });
 
+  $("#aboutBtn").click(function(){
+    $('#aboutCollapse').on('shown.bs.collapse', function() {
+      positionFilterHL();
+    }).on('show.bs.collapse', function() {
+      positionFilterHL();
+    });
+  });
+
   //Get all gallery images in all folders
   function getAllImgs(){
     $.ajax({
@@ -69,4 +77,10 @@ $(document).ready(function(){
     $("#filterHL").height($(".filterBtns").height()).width($(".filterBtns").width());
     $("#filterHL").offset({ top: newPos.top, left: newPos.left });
   };
+
+  function positionFilterHL(){
+    newPos = $(currentFilter).offset();
+    $("#filterHL").height($(".filterBtns").height()).width($(".filterBtns").width());
+    $("#filterHL").offset({ top: newPos.top, left: newPos.left });
+  }
 });
