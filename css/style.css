@@ -16,7 +16,8 @@ body,html{
 #gallery{
   height: 75%;
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 8fr;
+  grid-template-rows: auto;
 }
 
 #filterBar{
@@ -27,6 +28,8 @@ body,html{
 
 .filterBtns{
   height: 20%;
+  display: flex;
+  align-items: center;
 }
 
 .filterBtns:hover{
@@ -37,4 +40,25 @@ body,html{
   position: absolute;
   background-color: black;
   opacity: .25;
+}
+
+.row{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+#photoIcons{
+  overflow: auto;
+  overflow-y: scroll;
+}
+
+.card{
+  width: 100%;
+}
+
+.card:before{
+  content: "";
+  display: block;
+  padding-top: 100%;
 }
