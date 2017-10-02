@@ -5,11 +5,14 @@ $(document).ready(function(){
   var initialPos = $(".filterBtns").offset();
   $("#filterHL").height($(".filterBtns").height()).width($(".filterBtns").width());
   $("#filterHL").offset({ top: initialPos.top, left: initialPos.left });
+  var newPos;
+  var currentFilter = $("#all");
 
   //Set highlight animation on filter button click/populate gallery with filtered results
   $(".filterBtns").click(function(){
     var sender = $(this);
-    var newPos = sender.offset();
+    newPos = sender.offset();
+    currentFilter = sender;
     $("#filterHL").animate({top: newPos.top}, "slow");
     $("#photoIcons").fadeOut("fast", function(){
       $("#photoIcons").empty();
@@ -62,6 +65,8 @@ $(document).ready(function(){
   getAllImgs();
 
   window.onresize = function(){
-
-   };
+    newPos = $(currentFilter).offset();
+    $("#filterHL").height($(".filterBtns").height()).width($(".filterBtns").width());
+    $("#filterHL").offset({ top: newPos.top, left: newPos.left });
+  };
 });
