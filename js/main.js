@@ -25,7 +25,7 @@ $(document).ready(function(){
     });
   });
 
-  //Populate all gallery images\
+  //Get all gallery images in all folders
   function getAllImgs(){
     $.ajax({
       url: "../img/",
@@ -41,7 +41,7 @@ $(document).ready(function(){
       }
     });
   };
-
+  //Populate images within url
   function populateImgs(url){
     $.ajax({
       url: "../img/"+url,
