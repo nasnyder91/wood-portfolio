@@ -1,33 +1,85 @@
 body,html{
   width: 100%;
-  height: 100%;
+  height: 101%;
   margin: 0px;
   padding: 0px;
   overflow-x:hidden;
-  overflow: initial;
   position: relative;
   font-size: 62.5%;
+  font-family: 'Smythe';
+  background-color: #f4dec6;
+  background-image: url("../img/bg.png");
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
 }
 
 #pageTop{
   padding-bottom: 10px;
 }
 
+#aboutBtn{
+  width: 10%;
+  margin: auto;
+}
+
 #aboutBtn:hover{
   cursor: pointer;
+  color: #B64A30;
 }
 
 #aboutCollapse{
-  position: absolute;
+  position: relative;
+  background-color: rgba(182, 74, 48, 0.15);
 }
 
+#socialLinks{
+  font-size: 2.6rem;
+  margin-bottom: 0;
+
+}
+
+#socialLinks li {
+  padding: 5px 0 5px 0;
+}
+
+.socialLink a {
+  text-decoration: none;
+    color: grey;
+}
+
+.socialLink a:hover {
+    color: white;
+}
+
+.socialLink i {
+  padding-right: 10px;
+  color: white;
+}
 
 .container{
   max-width: 1300px;
 }
 
 #gallery{
-  margin-top: 5%;
+  margin-top: 30px;
   height: 75%;
   display: grid;
   grid-template-columns: 1fr 8fr;
@@ -50,10 +102,15 @@ body,html{
   cursor: pointer;
 }
 
+.filterBtns h3{
+  margin: auto;
+  font-size: 2.5rem;
+}
+
 #filterHL{
   position: absolute;
-  background-color: black;
-  opacity: .25;
+  border-radius: 20px;
+  background-color: rgba(182, 74, 48, 0.15);
 }
 
 #photoIcons{
@@ -63,7 +120,7 @@ body,html{
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
   grid-template-rows: repeat(auto-fill,200px);
-  grid-gap: 10px;
+  grid-gap: 20px;
 }
 
 .card{
@@ -71,10 +128,36 @@ body,html{
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  background-color: rgba(186, 167, 151, 0.5);
+  border-radius: 20px;
+}
+
+.card:hover{
+  cursor: pointer;
 }
 
 .card::before{
   content: "";
   display: block;
   padding-top: 100%;
+}
+
+.modalImg{
+  width: 100%;
+  margin-top: 10px;
+}
+
+.modal-content{
+  display: block;
+}
+
+.close{
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  width: 4rem;
+  top: 0px;
+  right: 0px;
+  font-size: 4rem;
+  opacity: 1.0;
 }

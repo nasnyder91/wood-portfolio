@@ -7,6 +7,8 @@
   <title>Wood Portfolio</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Smythe' rel='stylesheet'>
+  <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
   <div id="pageTop" class="text-center">
@@ -21,8 +23,14 @@
   <div class="collapse" id="aboutCollapse">
     <div class="aboutCard text-center">
       <p class="display-3">I am a pumba and this is my stuff.</p>
+      <ul id="socialLinks" class="list-inline">
+        <li class="col-xs-12 col-sm-4 col-md-3 col-lg-2 socialLink list-inline-item"><a href="https://www.linkedin.com/in/nick-snyder-development
+          "><i class="fa fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>
+        <li class="col-xs-12 col-sm-3 col-md-3 col-lg-2 socialLink list-inline-item"><a href="https://github.com/nasnyder91"><i class="footerIcon fa fa-github" aria-hidden="true"></i>GitHub</a></li>
+      </ul>
     </div>
   </div>
+
 
 
   <div id="gallery" class="container">
@@ -46,6 +54,23 @@
     </div>
     <div id="photoIcons">
 
+    </div>
+  </div>
+
+
+<!-- Image Modal -->
+  <div id="imgModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <div class="modal-body" id="imgBody">
+          <img class="modalImg img-responsive" src="" alt="Woodwork Image">
+        </div>
+
+      </div>
     </div>
   </div>
 

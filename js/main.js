@@ -25,18 +25,23 @@ $(document).ready(function(){
     });
   });
 
+  //Open/Close about section
   $("#aboutBtn").click(function(){
-    $('#aboutCollapse').on('shown.bs.collapse', function() {
-      positionFilterHL();
-    }).on('show.bs.collapse', function() {
-      positionFilterHL();
+    $('#aboutCollapse').on('show.bs.collapse', function() {
+      positionFilterHL(true);
+    }).on('shown.bs.collapse', function() {
+      positionFilterHL(false);
+    }).on('hide.bs.collapse', function() {
+      positionFilterHL(true);
+    }).on('hidden.bs.collapse', function() {
+      positionFilterHL(false);
     });
   });
 
   //Get all gallery images in all folders
   function getAllImgs(){
     $.ajax({
-      url: "../img/",
+      url: "../img/wood/",
       success: function(data){
         var parser = new DOMParser(),
             doc = parser.parseFromString(data, 'text/html');
@@ -52,7 +57,7 @@ $(document).ready(function(){
   //Populate images within url
   function populateImgs(url){
     $.ajax({
-      url: "../img/"+url,
+      url: "../img/wood/"+url,
       success: function(imgData){
         var imgParser = new DOMParser(),
             imgDoc = imgParser.parseFromString(imgData, 'text/html');
@@ -62,7 +67,7 @@ $(document).ready(function(){
         for(var r = 0; r < imgRows.length; r++){
           if (imgRows[r].children[2]) {
             if (parseInt(imgRows[r].children[2].innerText)>0){
-              $("#photoIcons").append("<div class='card' style='background-image:url(/img/"+url+imgRows[r].children[3].children[0].text+")'></div>");
+              $("#photoIcons").append("<div class='card' style='background-image:url(/img/wood/"+url+imgRows[r].children[3].children[0].text+");' data-toggle='modal' data-target='#imgModal' data-url='/img/wood/"+url+imgRows[r].children[3].children[0].text+"'></div>");
             };
           }
         }
@@ -72,15 +77,33 @@ $(document).ready(function(){
 
   getAllImgs();
 
+  //Setup image modal
+  $('#imgModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Button that triggered the modal
+    var imgURL = button.data('url'); // Extract info from data-* attributes
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this);
+    modal.find('.modal-body img').attr("src", imgURL);
+  });
+
+
   window.onresize = function(){
     newPos = $(currentFilter).offset();
     $("#filterHL").height($(".filterBtns").height()).width($(".filterBtns").width());
     $("#filterHL").offset({ top: newPos.top, left: newPos.left });
   };
 
-  function positionFilterHL(){
+  function positionFilterHL(tOrF){
     newPos = $(currentFilter).offset();
     $("#filterHL").height($(".filterBtns").height()).width($(".filterBtns").width());
     $("#filterHL").offset({ top: newPos.top, left: newPos.left });
+    if(tOrF == true){
+      setTimeout(function () {
+        positionFilterHL(true)
+      }, 1);
+    } else{
+      return;
+    };
   }
 });
