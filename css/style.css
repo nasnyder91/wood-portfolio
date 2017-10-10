@@ -1,21 +1,23 @@
 body,html{
   width: 100%;
-  height: 101%;
+  height: 100%;
   margin: 0px;
   padding: 0px;
   overflow-x:hidden;
   position: relative;
   font-size: 62.5%;
-  font-family: 'Smythe';
-  background-color: #f4dec6;
+  font-family: 'Ruda';
+  background-color: #d3b289;
   background-image: url("../img/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar-track
 {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
 	border-radius: 10px;
-	background-color: #F5F5F5;
+	background-color: rgba(96, 46, 8, 0.4);
 }
 
 ::-webkit-scrollbar
@@ -27,17 +29,32 @@ body,html{
 ::-webkit-scrollbar-thumb
 {
 	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #555;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.4);
+	background-color: rgba(8, 58, 2, 0.3);
 }
 
 #pageTop{
+  padding-top: 20px;
   padding-bottom: 10px;
 }
 
 #aboutBtn{
-  width: 10%;
+  display: inline-block;
   margin: auto;
+  margin-bottom: 10px;
+}
+
+#aboutBtn h3{
+  font-size: 3rem;
+  font-weight: bolder;
+  border-top: 1px #023A02 solid;
+  border-bottom: 1px #023A02 solid;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+#aboutBtn i{
+  color: #023A02;
 }
 
 #aboutBtn:hover{
@@ -47,13 +64,14 @@ body,html{
 
 #aboutCollapse{
   position: relative;
-  background-color: rgba(182, 74, 48, 0.15);
+  border-top: 1px #023A02 solid;
+  border-bottom: 1px #023A02 solid;
+  box-shadow: inset 0 0 50px rgba(96, 46, 8, 0.9);
 }
 
 #socialLinks{
   font-size: 2.6rem;
   margin-bottom: 0;
-
 }
 
 #socialLinks li {
@@ -62,11 +80,13 @@ body,html{
 
 .socialLink a {
   text-decoration: none;
-    color: grey;
+  color: black;
+  border-top: 1px #023A02 solid;
+  border-bottom: 1px #023A02 solid;
 }
 
 .socialLink a:hover {
-    color: white;
+  color: #B64A30;
 }
 
 .socialLink i {
@@ -74,8 +94,12 @@ body,html{
   color: white;
 }
 
+.fa-linkedin{
+  color: #1277B5 !important;
+}
+
 .container{
-  max-width: 1300px;
+  max-width: 1550px;
 }
 
 #gallery{
@@ -84,6 +108,8 @@ body,html{
   display: grid;
   grid-template-columns: 1fr 8fr;
   grid-template-rows: auto;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 #filterBar{
@@ -105,12 +131,14 @@ body,html{
 .filterBtns h3{
   margin: auto;
   font-size: 2.5rem;
+  font-weight: bolder;
 }
 
 #filterHL{
   position: absolute;
   border-radius: 20px;
-  background-color: rgba(182, 74, 48, 0.15);
+  background-color: rgba(96, 46, 8, 0.25);
+  box-shadow: inset 3px 3px 10px rgba(0,0,0,0.4);
 }
 
 #photoIcons{
@@ -130,6 +158,7 @@ body,html{
   background-size: contain;
   background-color: rgba(186, 167, 151, 0.5);
   border-radius: 20px;
+  box-shadow: inset 3px 3px 10px rgba(0,0,0,0.4);
 }
 
 .card:hover{
