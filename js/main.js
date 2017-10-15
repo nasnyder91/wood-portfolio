@@ -80,7 +80,7 @@ $(document).ready(function(){
   function getAllImgs(){
     console.log("1");
     $.ajax({
-      url: "/img/wood/",
+      url: "https://nasnyder91.github.io/wood-portfolio/img/wood/",
       xhrFields: {
         withCredentials: false
       },
