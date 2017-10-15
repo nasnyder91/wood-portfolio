@@ -79,7 +79,7 @@ $(document).ready(function(){
   //Get all gallery images in all folders
   function getAllImgs(){
     $.ajax({
-      url: "../img/wood/",
+      url: "img/wood/",
       xhrFields: {
         withCredentials: false
       },
