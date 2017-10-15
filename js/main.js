@@ -80,11 +80,8 @@ $(document).ready(function(){
   function getAllImgs(){
     console.log("1");
     $.ajax({
-      url: "css/style.css",
-      xhrFields: {
-        withCredentials: false
-      },
-      success: function(data){
+      url: "img/wood/",
+      function(data){
         var parser = new DOMParser(),
             doc = parser.parseFromString(data, 'text/html');
 
