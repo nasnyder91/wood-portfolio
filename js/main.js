@@ -80,7 +80,7 @@ $(document).ready(function(){
   function getAllImgs(){
     console.log("1");
     $.ajax({
-      url: "img/wood/",
+      url: "img/Wood/",
       xhrFields: {
         withCredentials: false
       },
@@ -98,7 +98,6 @@ $(document).ready(function(){
   };
   //Populate images within url
   function populateImgs(url){
-    console.log("2");
     $.ajax({
       url: "img/wood/"+url,
       success: function(imgData){
