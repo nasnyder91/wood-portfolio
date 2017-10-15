@@ -77,7 +77,7 @@ $(document).ready(function(){
 
 
   //Get all gallery images in all folders
-  /*function getAllImgs(){
+  function getAllImgs(){
     $.ajax({
       url: "https://nasnyder91.github.io/wood-portfolio/img/wood",
       success: function(data){
@@ -111,7 +111,7 @@ $(document).ready(function(){
         }
       }
     })
-  };*/
+  };
 
   //Setup image modal
   $('#imgModal').on('show.bs.modal', function (event) {
