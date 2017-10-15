@@ -79,7 +79,7 @@ $(document).ready(function(){
   //Get all gallery images in all folders
   function getAllImgs(){
     $.ajax({
-      url: "../wood-portfolio/img/wood/",
+      url: "wood-portfolio/img/wood/",
       success: function(data){
         var parser = new DOMParser(),
             doc = parser.parseFromString(data, 'text/html');
@@ -95,7 +95,7 @@ $(document).ready(function(){
   //Populate images within url
   function populateImgs(url){
     $.ajax({
-      url: "../wood-portfolio/img/wood/"+url,
+      url: "wood-portfolio/img/wood/"+url,
       success: function(imgData){
         var imgParser = new DOMParser(),
             imgDoc = imgParser.parseFromString(imgData, 'text/html');
