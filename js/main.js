@@ -78,6 +78,7 @@ $(document).ready(function(){
 
   //Get all gallery images in all folders
   function getAllImgs(){
+    console.log("1");
     $.ajax({
       url: "img/wood/",
       xhrFields: {
@@ -97,6 +98,7 @@ $(document).ready(function(){
   };
   //Populate images within url
   function populateImgs(url){
+    console.log("2");
     $.ajax({
       url: "img/wood/"+url,
       success: function(imgData){
