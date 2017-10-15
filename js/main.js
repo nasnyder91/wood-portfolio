@@ -80,7 +80,7 @@ $(document).ready(function(){
   function getAllImgs(){
     console.log("1");
     $.ajax({
-      url: "../img/wood/",
+      url: "css/",
       xhrFields: {
         withCredentials: false
       },
