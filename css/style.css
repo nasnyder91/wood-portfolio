@@ -41,7 +41,7 @@ body,html{
 #aboutBtn{
   display: inline-block;
   margin: auto;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 #aboutBtn h3{
@@ -116,6 +116,7 @@ body,html{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-right: 1px #023A02 solid;
 }
 
 .filterBtns{
@@ -143,17 +144,21 @@ body,html{
 
 #photoIcons{
   padding: 10px;
-  overflow: auto;
-  overflow-y: scroll;
+  overflow: scroll;
+  overflow-y: visible;
+  overflow-x: hidden;
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
   grid-template-rows: repeat(auto-fill,200px);
   grid-gap: 20px;
   justify-content: center;
+  margin-right: 20px;
 }
 
 .card{
   width: 100%;
+  min-height: 200px;
+  position: relative;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -202,7 +207,6 @@ body,html{
 @media(max-width: 1600px){
   #gallery{
     margin-left: 20px;
-    margin-right: 20px;
   }
 }
 @media(max-width: 1260px){
@@ -210,30 +214,52 @@ body,html{
     grid-template-columns: repeat(auto-fill, 150px);
     grid-template-rows: repeat(auto-fill,150px);
   }
+  .card{
+    min-height: 150px;
+  }
+  body,html{
+    font-size: 50%;
+  }
+}
+
+@media(max-width: 1000px){
+  body::-webkit-scrollbar {
+       width: 0 !important;
+   }
 }
 
 @media(max-width: 800px){
+  body,html{
+    font-size: 40%;
+  }
+  #aboutBtn h3{
+    font-size: 2.5rem;
+  }
   #photoIcons{
     grid-template-columns: repeat(auto-fill, 100px);
     grid-template-rows: repeat(auto-fill,100px);
   }
+  .card{
+    min-height: 100px;
+  }
   #gallery{
     grid-template-columns: auto;
     grid-template-rows: 1fr 8fr;
+    margin-left: 0;
+    margin-top: 15px;
   }
   #filterBar{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    border-bottom: 1px #023A02 solid;
+    margin-bottom: 5px;
   }
   .filterBtns{
     height: 100%;
     width: 20%;
     display: flex;
     align-items: center;
-  }
-  .filterBtns h3{
-    font-size: 2rem;
   }
 }
 
@@ -244,6 +270,7 @@ body,html{
   }
   .card{
     width: 100%;
+    min-height: 75px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -257,15 +284,16 @@ body,html{
 }
 
 @media(max-width: 450px){
-  .filterBtns h3{
-    font-size: 1.5rem;
-  }
-  #gallery{
-    margin-left: 10px;
-    margin-right: 60px;
-  }
   #photoIcons{
     grid-template-columns: repeat(auto-fill, 50px);
     grid-template-rows: repeat(auto-fill,50px);
+  }.card{
+    min-height: 50px;
+  }
+}
+
+@media(max-width: 400px){
+  #pageTop h1{
+    font-size: 5rem;
   }
 }

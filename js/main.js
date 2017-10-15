@@ -25,6 +25,42 @@ $(document).ready(function(){
     });
   });
 
+
+
+  //Position the filter highlight, repeat if true.
+  function positionFilterHL(tOrF){
+    newPos = $(currentFilter).offset();
+    $("#filterHL").height($(".filterBtns").height()).width($(".filterBtns").width());
+    $("#filterHL").offset({ top: newPos.top, left: newPos.left });
+    if(tOrF == true){
+      setTimeout(function () {
+        positionFilterHL(true)
+      }, 1);
+    } else{
+      return;
+    };
+  }
+
+
+
+  function toggleTitleBreak(){
+    if($(window).width() <= 800){
+      $("#titleBreak").show();
+    } else{
+      $("#titleBreak").hide();
+    }
+  };
+
+
+
+  //Perform functions on window resize
+  window.onresize = function(){
+    positionFilterHL(false);
+    toggleTitleBreak();
+  };
+
+
+
   //Open/Close about section
   $("#aboutBtn").click(function(){
     $('#aboutCollapse').on('show.bs.collapse', function() {
@@ -37,6 +73,8 @@ $(document).ready(function(){
       positionFilterHL(false);
     });
   });
+
+
 
   //Get all gallery images in all folders
   function getAllImgs(){
@@ -75,33 +113,16 @@ $(document).ready(function(){
     })
   };
 
-  getAllImgs();
-
   //Setup image modal
   $('#imgModal').on('show.bs.modal', function (event) {
-    var button = $(event.relatedTarget); // Button that triggered the modal
-    var imgURL = button.data('url'); // Extract info from data-* attributes
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var button = $(event.relatedTarget);
+    var imgURL = button.data('url');
     var modal = $(this);
     modal.find('.modal-body img').attr("src", imgURL);
   });
 
 
-  window.onresize = function(){
-    positionFilterHL(false);
-  };
-
-  function positionFilterHL(tOrF){
-    newPos = $(currentFilter).offset();
-    $("#filterHL").height($(".filterBtns").height()).width($(".filterBtns").width());
-    $("#filterHL").offset({ top: newPos.top, left: newPos.left });
-    if(tOrF == true){
-      setTimeout(function () {
-        positionFilterHL(true)
-      }, 1);
-    } else{
-      return;
-    };
-  }
+  //Perform initial functions on startup
+  getAllImgs();
+  toggleTitleBreak();
 });
