@@ -149,6 +149,7 @@ body,html{
   grid-template-columns: repeat(auto-fill, 200px);
   grid-template-rows: repeat(auto-fill,200px);
   grid-gap: 20px;
+  justify-content: center;
 }
 
 .card{
@@ -174,10 +175,17 @@ body,html{
 .modalImg{
   width: 100%;
   margin-top: 10px;
+  border-radius: 20px;
 }
 
 .modal-content{
   display: block;
+  border-radius: 20px;
+}
+
+#imgBody{
+  background-color: #d3b289;
+  border-radius: 20px;
 }
 
 .close{
@@ -189,4 +197,75 @@ body,html{
   right: 0px;
   font-size: 4rem;
   opacity: 1.0;
+}
+
+@media(max-width: 1600px){
+  #gallery{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media(max-width: 1260px){
+  #photoIcons{
+    grid-template-columns: repeat(auto-fill, 150px);
+    grid-template-rows: repeat(auto-fill,150px);
+  }
+}
+
+@media(max-width: 800px){
+  #photoIcons{
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-template-rows: repeat(auto-fill,100px);
+  }
+  #gallery{
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 8fr;
+  }
+  #filterBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .filterBtns{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+  }
+  .filterBtns h3{
+    font-size: 2rem;
+  }
+}
+
+@media(max-width: 510px){
+  #photoIcons{
+    grid-template-columns: repeat(auto-fill, 75px);
+    grid-template-rows: repeat(auto-fill,75px);
+  }
+  .card{
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: rgba(186, 167, 151, 0.5);
+    border-radius: 10px;
+    box-shadow: inset 3px 3px 10px rgba(0,0,0,0.4);
+  }
+  #filterHL{
+    border-radius: 10px;
+  }
+}
+
+@media(max-width: 450px){
+  .filterBtns h3{
+    font-size: 1.5rem;
+  }
+  #gallery{
+    margin-left: 10px;
+    margin-right: 60px;
+  }
+  #photoIcons{
+    grid-template-columns: repeat(auto-fill, 50px);
+    grid-template-rows: repeat(auto-fill,50px);
+  }
 }

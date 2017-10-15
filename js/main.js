@@ -13,7 +13,7 @@ $(document).ready(function(){
     var sender = $(this);
     newPos = sender.offset();
     currentFilter = sender;
-    $("#filterHL").animate({top: newPos.top}, "slow");
+    $("#filterHL").animate({top: newPos.top + $('body').scrollTop(), left: newPos.left - $('body').scrollLeft()}, "slow");
     $("#photoIcons").fadeOut("fast", function(){
       $("#photoIcons").empty();
       if($(sender).attr("id") == "all"){
@@ -89,9 +89,7 @@ $(document).ready(function(){
 
 
   window.onresize = function(){
-    newPos = $(currentFilter).offset();
-    $("#filterHL").height($(".filterBtns").height()).width($(".filterBtns").width());
-    $("#filterHL").offset({ top: newPos.top, left: newPos.left });
+    positionFilterHL(false);
   };
 
   function positionFilterHL(tOrF){
