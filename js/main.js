@@ -80,7 +80,7 @@ $(document).ready(function(){
   function getAllImgs(){
     console.log("1");
     $.ajax({
-      url: "css/",
+      url: "css/style.css",
       xhrFields: {
         withCredentials: false
       },
