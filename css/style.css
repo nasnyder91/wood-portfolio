@@ -293,7 +293,7 @@ body,html{
 @media(max-width: 450px){
   #photoIcons{
     grid-template-columns: repeat(auto-fill, 50px);
-    grid-template-rows: repeat(auto-fill,50px);
+    grid-template-rows: repeat(auto-fit,50px);
   }
 
   .card{
