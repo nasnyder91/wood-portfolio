@@ -79,22 +79,22 @@ $(document).ready(function(){
   //Get all gallery images in all folders
   function getAllImgs(){
     for(var i = 1; i <= 18; i++){
-      $("#photoIcons").append("<div class='card' style='background-image:url(img/wood/Bowls/img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/wood/Bowls/img"+i+".JPG'></div>");
+      $("#photoIcons").append("<div class='card' style='background-image:url(img/Wood/Bowls/img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/Wood/Bowls/img"+i+".JPG'></div>");
     }
     for(var i = 1; i <= 8; i++){
-      $("#photoIcons").append("<div class='card' style='background-image:url(img/wood/Vases/img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/wood/Vases/img"+i+".JPG'></div>");
+      $("#photoIcons").append("<div class='card' style='background-image:url(img/Wood/Vases/img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/wood/Vases/img"+i+".JPG'></div>");
     }
     for(var i = 1; i <= 8; i++){
-      $("#photoIcons").append("<div class='card' style='background-image:url(img/wood/Jewelry/img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/wood/Jewelry/img"+i+".JPG'></div>");
+      $("#photoIcons").append("<div class='card' style='background-image:url(img/Wood/Jewelry/img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/Wood/Jewelry/img"+i+".JPG'></div>");
     }
     for(var i = 1; i <= 10; i++){
-      $("#photoIcons").append("<div class='card' style='background-image:url(img/wood/Misc/img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/wood/Misc/img"+i+".JPG'></div>");
+      $("#photoIcons").append("<div class='card' style='background-image:url(img/Wood/Misc/img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/Wood/Misc/img"+i+".JPG'></div>");
     }
   };
   //Populate images within url
   function populateImgs(url,qty){
     for(var i = 1; i <= qty; i++){
-      $("#photoIcons").append("<div class='card' style='background-image:url(img/wood/"+url+"img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/wood/"+url+"img"+i+".JPG'></div>");
+      $("#photoIcons").append("<div class='card' style='background-image:url(img/Wood/"+url+"img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/Wood/"+url+"img"+i+".JPG'></div>");
     }
   };
 
