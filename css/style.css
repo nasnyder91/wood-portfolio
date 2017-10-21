@@ -107,7 +107,9 @@ body,html{
   height: 75%;
   display: grid;
   grid-template-columns: 1fr 8fr;
+  -ms-grid-columns: 1fr 8fr;
   grid-template-rows: auto;
+  -ms-grid-rows: auto;
   padding-left: 0;
   padding-right: 0;
 }
@@ -260,6 +262,7 @@ body,html{
     flex-direction: row;
     justify-content: space-around;
     border-bottom: 1px #023A02 solid;
+    border-right: 0;
     margin-bottom: 5px;
   }
   .filterBtns{
@@ -293,7 +296,7 @@ body,html{
 @media(max-width: 450px){
   #photoIcons{
     grid-template-columns: repeat(auto-fill, 50px);
-    grid-template-rows: repeat(auto-fit,50px);
+    grid-template-rows: repeat(auto-fill,50px);
   }
 
   .card{
