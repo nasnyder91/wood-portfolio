@@ -19,7 +19,7 @@ $(document).ready(function(){
       if($(sender).attr("id") == "all"){
         getAllImgs();
       } else{
-        populateImgs($(sender).attr("url"));
+        populateImgs($(sender).attr("url"), $(sender).attr("qty"));
       }
       $("#photoIcons").fadeIn("fast");
     });
@@ -78,41 +78,24 @@ $(document).ready(function(){
 
   //Get all gallery images in all folders
   function getAllImgs(){
-    console.log("1");
-    $.ajax({
-      url: "https://nasnyder91.github.io/wood-pictures/",
-      function(data){
-        var parser = new DOMParser(),
-            doc = parser.parseFromString(data, 'text/html');
-
-        var rows = doc.querySelector('table').querySelectorAll('tr');
-
-        for (var i=1;i<rows.length;i++) {
-          populateImgs(rows[i].children[3].children[0].text);
-        }
-      }
-    });
+    for(var i = 1; i <= 18; i++){
+      $("#photoIcons").append("<div class='card' style='background-image:url(img/wood/Bowls/img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/wood/Bowls/img"+i+".JPG'></div>");
+    }
+    for(var i = 1; i <= 8; i++){
+      $("#photoIcons").append("<div class='card' style='background-image:url(img/wood/Vases/img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/wood/Vases/img"+i+".JPG'></div>");
+    }
+    for(var i = 1; i <= 8; i++){
+      $("#photoIcons").append("<div class='card' style='background-image:url(img/wood/Jewelry/img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/wood/Jewelry/img"+i+".JPG'></div>");
+    }
+    for(var i = 1; i <= 10; i++){
+      $("#photoIcons").append("<div class='card' style='background-image:url(img/wood/Misc/img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/wood/Misc/img"+i+".JPG'></div>");
+    }
   };
   //Populate images within url
-  function populateImgs(url){
-    console.log("2");
-    $.ajax({
-      url: "https://nasnyder91.github.io/wood-pictures/"+url,
-      success: function(imgData){
-        var imgParser = new DOMParser(),
-            imgDoc = imgParser.parseFromString(imgData, 'text/html');
-
-        var imgRows = imgDoc.querySelector('table').querySelectorAll('tr')
-
-        for(var r = 0; r < imgRows.length; r++){
-          if (imgRows[r].children[2]) {
-            if (parseInt(imgRows[r].children[2].innerText)>0){
-              $("#photoIcons").append("<div class='card' style='background-image:url(https://nasnyder91.github.io/wood-pictures/"+url+imgRows[r].children[3].children[0].text+");' data-toggle='modal' data-target='#imgModal' data-url='https://nasnyder91.github.io/wood-pictures/"+url+imgRows[r].children[3].children[0].text+"'></div>");
-            };
-          }
-        }
-      }
-    })
+  function populateImgs(url,qty){
+    for(var i = 1; i <= qty; i++){
+      $("#photoIcons").append("<div class='card' style='background-image:url(img/wood/"+url+"img"+i+".JPG);' data-toggle='modal' data-target='#imgModal' data-url='img/wood/"+url+"img"+i+".JPG'></div>");
+    }
   };
 
   //Setup image modal

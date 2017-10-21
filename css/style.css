@@ -183,12 +183,19 @@ body,html{
   border-radius: 20px;
 }
 
+.modal-body{
+
+}
+
 .modal-content{
   display: block;
   border-radius: 20px;
+
 }
 
 #imgBody{
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+  box-shadow: 20px 60px 20px rgba(0,0,0,0.6);
   background-color: #d3b289;
   border-radius: 20px;
 }
