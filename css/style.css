@@ -160,6 +160,7 @@ body,html{
 .card{
   width: 100%;
   min-height: 200px;
+  max-height: 200px;
   position: relative;
   background-position: center;
   background-repeat: no-repeat;
@@ -225,6 +226,7 @@ body,html{
   }
   .card{
     min-height: 150px;
+    max-height: 150px;
   }
   body,html{
     font-size: 50%;
@@ -250,6 +252,7 @@ body,html{
   }
   .card{
     min-height: 100px;
+    max-height: 100px;
   }
   #gallery{
     grid-template-columns: auto;
@@ -280,13 +283,14 @@ body,html{
   }
   .card{
     width: 100%;
-    min-height: 75px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     background-color: rgba(186, 167, 151, 0.5);
     border-radius: 10px;
     box-shadow: inset 3px 3px 10px rgba(0,0,0,0.4);
+    min-height: 75px;
+    max-height: 75px;
   }
   #filterHL{
     border-radius: 10px;
@@ -294,15 +298,6 @@ body,html{
 }
 
 @media(max-width: 450px){
-  #photoIcons{
-    grid-template-columns: repeat(auto-fill, 50px);
-    grid-template-rows: repeat(auto-fill,50px);
-  }
-
-  .card{
-    min-height: 50px;
-    max-height: 50px;
-  }
 }
 
 @media(max-width: 400px){
