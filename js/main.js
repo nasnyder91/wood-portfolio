@@ -97,7 +97,7 @@ $(document).ready(function(){
   function populateImgs(url){
     console.log("2");
     $.ajax({
-      url: "../img/wood/"+url,
+      url: "https://nasnyder91.github.io/wood-pictures/"+url,
       success: function(imgData){
         var imgParser = new DOMParser(),
             imgDoc = imgParser.parseFromString(imgData, 'text/html');
@@ -107,7 +107,7 @@ $(document).ready(function(){
         for(var r = 0; r < imgRows.length; r++){
           if (imgRows[r].children[2]) {
             if (parseInt(imgRows[r].children[2].innerText)>0){
-              $("#photoIcons").append("<div class='card' style='background-image:url(img/wood/"+url+imgRows[r].children[3].children[0].text+");' data-toggle='modal' data-target='#imgModal' data-url='/img/wood/"+url+imgRows[r].children[3].children[0].text+"'></div>");
+              $("#photoIcons").append("<div class='card' style='background-image:url(https://nasnyder91.github.io/wood-pictures/"+url+imgRows[r].children[3].children[0].text+");' data-toggle='modal' data-target='#imgModal' data-url='https://nasnyder91.github.io/wood-pictures/"+url+imgRows[r].children[3].children[0].text+"'></div>");
             };
           }
         }
