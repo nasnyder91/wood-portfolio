@@ -81,8 +81,6 @@ body,html{
 .socialLink a {
   text-decoration: none;
   color: black;
-  border-top: 1px #023A02 solid;
-  border-bottom: 1px #023A02 solid;
 }
 
 .socialLink a:hover {
