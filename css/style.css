@@ -294,8 +294,11 @@ body,html{
   #photoIcons{
     grid-template-columns: repeat(auto-fill, 50px);
     grid-template-rows: repeat(auto-fill,50px);
-  }.card{
+  }
+
+  .card{
     min-height: 50px;
+    max-height: 50px;
   }
 }
 
