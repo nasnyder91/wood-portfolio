@@ -145,7 +145,7 @@ body,html{
 #photoIcons{
   padding: 10px;
   overflow: scroll;
-  overflow-y: scroll;
+  overflow-y: visible;
   overflow-x: hidden;
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
