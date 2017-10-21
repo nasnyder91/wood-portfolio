@@ -80,7 +80,7 @@ $(document).ready(function(){
   function getAllImgs(){
     console.log("1");
     $.ajax({
-      url: "img/wood",
+      url: "https://nasnyder91.github.io/wood-pictures/",
       function(data){
         var parser = new DOMParser(),
             doc = parser.parseFromString(data, 'text/html');
